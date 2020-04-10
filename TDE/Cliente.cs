@@ -45,11 +45,11 @@ namespace TDE
             Console.WriteLine("".PadRight(60, '-'));
             Console.WriteLine("");
             Console.ReadLine();
-            foreach (Cliente x in Lclientes)
-            {
-                Console.WriteLine(x);
-            }
-            Console.ReadLine();
+            //foreach (Cliente x in Lclientes)
+            //{
+            //    Console.WriteLine(x);
+            //}
+            //Console.ReadLine();
         }
 
 

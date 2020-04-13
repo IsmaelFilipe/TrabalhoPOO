@@ -13,7 +13,8 @@ namespace TDE
             Excel excel = new Excel();
             
             Cliente cliente = new Cliente();
-           
+            cliente.ClienteExcel();
+
             int x = 1;
             while (x != 3)
             {
@@ -31,26 +32,35 @@ namespace TDE
                 {
                     case 1:
                         Console.Clear();
+                        cliente.Imprimir();
 
-                        cliente.ClienteExcel();
+                        int Mcliente = 0;
 
-                        Console.WriteLine("Informe os dados do cliente");
-                        string obj = Console.ReadLine();
-                        
-                        cliente.Remover(obj);
-                        //List<Cliente> ListaDeCliente = excel.ClienteExcel();
-                        //if (ListaDeCliente != null)
-                        //{
-                        //    Console.WriteLine("".PadRight(60, '-'));
-                        //    Console.WriteLine("Codigo".PadRight(10) + "Nome".PadRight(35) + "Sexo".PadLeft(15));
-                        //    Console.WriteLine("".PadRight(60, '-'));
-                        //    foreach (var a in ListaDeCliente)
-                        //    {
-                        //        Console.WriteLine($"{a.codigo.PadRight(10)} |{a.Nome.PadRight(35)} |{a.Sexo.PadLeft(10)}");
-                        //    }
-                        //}
-                        //else
-                        //    Console.WriteLine("Item nao encontrado");
+                        while (Mcliente != 5)
+                        {
+                            Console.Clear();
+                            string obj;
+                            Console.WriteLine("Menu cliente:");
+                            Console.WriteLine("1 - Alterar dados");
+                            Console.WriteLine("2 - Remover dados");
+                            Mcliente = int.Parse(Console.ReadLine());
+                            switch (Mcliente)
+                            {
+                                case 1:
+                                    Console.Clear();
+                                    Console.WriteLine("Informe os dados do cliente que deseja alterar");
+                                    obj = Console.ReadLine();
+                                    cliente.Alterar(obj);
+                                    break;
+                                case 2:
+                                    Console.Clear();
+                                    Console.WriteLine("Informe os dados do cliente que deseja remober");
+                                    obj = Console.ReadLine();
+                                    cliente.Remover(obj);
+                                    break;
+                            }
+                        }
+                       
                         break;
                     case 2:
                         Console.Clear();

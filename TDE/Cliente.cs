@@ -48,7 +48,7 @@ namespace TDE
 
         public void Remover(string ID)
         {
-
+            //teste
 
             Cliente cliente = Lclientes.Find(x => x.codigo == ID);
             if (cliente != null)

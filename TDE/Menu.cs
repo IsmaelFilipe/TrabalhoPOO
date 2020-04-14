@@ -10,8 +10,9 @@ namespace TDE
     {
         public Menu()
         {
-            Excel excel = new Excel();
-            
+            Dependente dependente = new Dependente();
+            dependente.DependenteExcel();
+
             Cliente cliente = new Cliente();
             cliente.ClienteExcel();
 
@@ -43,6 +44,7 @@ namespace TDE
                             Console.WriteLine("Menu cliente:");
                             Console.WriteLine("1 - Alterar dados");
                             Console.WriteLine("2 - Remover dados");
+                            Console.WriteLine("3 - Pesquisar");
                             Mcliente = int.Parse(Console.ReadLine());
                             switch (Mcliente)
                             {
@@ -54,9 +56,18 @@ namespace TDE
                                     break;
                                 case 2:
                                     Console.Clear();
-                                    Console.WriteLine("Informe os dados do cliente que deseja remober");
+                                    Console.WriteLine("Informe o codigo do cliente que deseja remover");
                                     obj = Console.ReadLine();
                                     cliente.Remover(obj);
+                                    break;
+                                case 3:
+                                    Console.Clear();
+                                    Console.WriteLine("Informe o codigo do cliente que deseja pesquisar");
+                                    obj = Console.ReadLine();
+                                    cliente.Pesquisa(obj);
+                                    break;
+                                default:
+                                    Console.WriteLine("Opcao invalida");
                                     break;
                             }
                         }
@@ -64,7 +75,47 @@ namespace TDE
                         break;
                     case 2:
                         Console.Clear();
-                        //excel.Dependentes();
+                        dependente.Imprimir();
+
+                        int Mdependente = 0;
+
+                        while (Mdependente != 4)
+                        {
+                            Console.Clear();
+                            string obj;
+                            Console.WriteLine("Menu dependente:");
+                            Console.WriteLine("1 - Alterar dados");
+                            Console.WriteLine("2 - Remover dados");
+                            Console.WriteLine("3 - Pesquisar");
+                            Mdependente = int.Parse(Console.ReadLine());
+                            switch (Mdependente)
+                            {
+                                case 1:
+                                    Console.Clear();
+                                    Console.WriteLine("Informe o codigo do dependente que deseja alterar");
+                                    obj = Console.ReadLine();
+                                    dependente.Alterar(obj);
+                                    break;
+                                case 2:
+                                    Console.Clear();
+                                    Console.WriteLine("Informe o codigo do dependente que deseja remover");
+                                    obj = Console.ReadLine();
+                                    dependente.Remover(obj);
+                                    break;
+                                case 3:
+                                    Console.Clear();
+                                    Console.WriteLine("Informe o codigo do dependente que deseja pesquisar");
+                                    obj = Console.ReadLine();
+                                    cliente.Pesquisa(obj);
+                                    break;
+                                default:
+                                    Console.WriteLine("Opcao invalida");
+                                    break;
+                            }
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Opcao invalida");
                         break;
                 }
             }

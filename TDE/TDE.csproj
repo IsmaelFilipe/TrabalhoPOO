@@ -68,7 +68,6 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Dependente.cs" />
-    <Compile Include="Excel.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

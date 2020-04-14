@@ -83,5 +83,16 @@ namespace TDE
             Console.WriteLine("Lista de Clientes atualizada");
             Imprimir();
         }
+
+        public void Pesquisa(string ID)
+        {
+            Cliente cliente = Lclientes.Find(x => x.codigo == ID);
+            if (cliente != null)
+            {
+                Console.WriteLine($"Codigo: {cliente.codigo}\nNome: {cliente.Nome}\nSexo: {cliente.Sexo}");
+            }
+            else
+                Console.WriteLine("Cliente nao encontrado!!");
+        }
     }
 }

@@ -57,11 +57,16 @@ namespace TDE
             if (dependente != null)
             {
                 Ldependentes.Remove(dependente);
-            }
-            Console.Clear();
-            Console.WriteLine("Lista de Clientes atualizada");
+                Console.Clear();
+                Console.WriteLine("Lista de Clientes atualizada");
 
-            Imprimir();
+                Imprimir();
+            }
+            else
+            {
+                Console.WriteLine("Cliente nao encontrado");
+                Console.ReadLine();
+            }
         }
 
         public void Alterar(string ID)
@@ -74,13 +79,15 @@ namespace TDE
                 dependente.CodigoCliente = Console.ReadLine();
                 Console.WriteLine("Informe o novo nome");
                 dependente.Nome = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("Lista de Clientes atualizada");
+                Imprimir();
             }
             else
+            {
                 Console.WriteLine("Cliente nao encontrado!!");
-
-            Console.Clear();
-            Console.WriteLine("Lista de Clientes atualizada");
-            Imprimir();
+                Console.ReadLine();
+            }
         }
 
         public void Pesquisa(string ID)

@@ -45,12 +45,13 @@ namespace TDE
                             Console.WriteLine("1 - Alterar dados");
                             Console.WriteLine("2 - Remover dados");
                             Console.WriteLine("3 - Pesquisar");
+                            Console.WriteLine("4 - Sair");
                             Mcliente = int.Parse(Console.ReadLine());
                             switch (Mcliente)
                             {
                                 case 1:
                                     Console.Clear();
-                                    Console.WriteLine("Informe os dados do cliente que deseja alterar");
+                                    Console.WriteLine("Informe os codigo do cliente que deseja alterar");
                                     obj = Console.ReadLine();
                                     cliente.Alterar(obj);
                                     break;
